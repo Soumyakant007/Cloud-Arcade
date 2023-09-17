@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Arcade - Explore and Play</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<style>
+ 
+    header {
+  background-color: #355fad;
+  padding: 1rem 0;
+  font-size: 100px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: 60px;
+  color: #081318;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: #c5c6c7;
+}
+    .top-title-bar {
+    background-color: #021a38; /* Blue */
+    color: #357571;
+    padding: 0.8rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(33, 69, 110, 0.096);
+  }
+
+  .top-title-bar h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .top-title-bar p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+  }
+   body {
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    background: url("bg2.png");
+    object-fit: fill;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+    color: #c5c6c7;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: #243452;
+    padding: 1rem 0;
+    font-size: 60px;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 60px;
+    color: #87CEEB;
+  }
+
+  .game {
+    background-color: #0c343b;
+    border-radius: 20px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .game:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .game img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s;
+  }
+
+  .game-content {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .game h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #66fcf1;
+  }
+
+  .game-description {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #c5c6c7;
+  overflow: hidden;
+  max-height: 80px;
+  transition: max-height 0.3s, opacity 0.3s;
+  
+}
+
+.game:hover .game-description {
+    max-height: 200px; /* Adjust the value to show more content */
+    opacity: 1;
+}
+.full-description {
+  max-height: none;
+  transition: max-height 0.3s;
+}
+
+.game:hover .full-description {
+  max-height: 200px; /* Adjust the value to show more content */
+}
+
+.game a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #66fcf1;
+    color: #0b0c10;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .game a:hover {
+    background-color: #66fcf1;
+    transform: scale(1.05);
+  }
+
+
+</style>
+</head>
+<body background="bg.png">
+<header>
+        <div class="top-title-bar">
+      <h1>Cloud Arcade</h1>
+      <p class="lead">Discover a World of Games</p>
+    </div>
+    </header>
+<div id="game-grid" class="container mt-5">
+  <div class="row">
+    <div class="col-md-3 mb-4">
+      <div class="game">
+        <img src="asss.webp" alt="Game 1">
+        <div class="game-content">
+          <h2>Asteroid Destroyer</h2>
+          <div class="game-description">
+            <p>"Asteroid Destroyer" is an action-packed space-themed game where players pilot a  spaceship and navigate through asteroid fields, strategically shoot and dodge asteroids </p>
+            <p class="full-description">by   <a href="https://github.com/aman-atg/asteroids-game"target="_blank">aman-atg</a></p>
+          </div>
+          <a href="http://asteroid-game-env.eba-zpqxmwgf.ap-southeast-2.elasticbeanstalk.com/ " class="btn btn-primary" target="_blank">Play Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="game">
+        <img src="tictac.jpg" alt="Game 2">
+        <div class="game-content">
+          <h2>Tic Tac Toe</h2>
+          <div class="game-description">
+            <p>Master the classic game of Tic-Tac-Toe in this digital twist. Challenge your strategic thinking and outwit your opponent as you aim to achieve three in a row. Enjoy timeless fun with modern convenience.</p>
+            <p class="read-more">by   <a href="https://github.com/amit-y11/tic_tac_toe/"target="_blank">amit-y11</a></p>
+          </div>
+          <a href="http://tictactoe-env.eba-2kye9brs.ap-southeast-2.elasticbeanstalk.com/" class="btn btn-primary" target="_blank">Play Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="game">
+        <img src="2048.png" alt="Game 3">
+        <div class="game-content">
+          <h2>2048</h2>
+          <div class="game-description">
+            <p>2048: Merge tiles to reach the elusive 2048 tile in this addictive puzzle game.  A test of logic and patience that challenges your numerical prowess.</p>
+            <p class="read-more">by   <a href="https://github.com/gabrielecirulli/2048"target="_blank">gabrielecirulli</a></p>
+          </div>
+          <a href="http://2048-env.eba-awuxhxjb.ap-southeast-2.elasticbeanstalk.com/" class="btn btn-primary" target="_blank">Play Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="game">
+        <img src="whack.png" alt="Game 4">
+        <div class="game-content">
+          <h2>Whack-A-Mole</h2>
+          <div class="game-description">
+            <p>"Whack-A-Mole" is a fast-paced arcade game where players use quick reflexes to hit cute moles that pop up from various holes. Test your agility and precision as you attempt to whack as many moles as possible within a limited time.</p>
+            <p class="read-more">by   <a href="https://github.com/cromega08/whack_a_mole"target="_blank">cromega08</a></p>
+          </div>
+          <a href="http://whackamole-env.eba-7ipztxku.ap-southeast-2.elasticbeanstalk.com/" class="btn btn-primary" target="_blank">Play Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="game">
+          <img src="flappy.png" alt="Game 4">
+          <div class="game-content">
+            <h2>Whack-A-Mole</h2>
+            <div class="game-description">
+              <p>"Flappy Bird: A classic game now available on our store! Navigate a bird through pipes in this addictive challenge</p>
+              <p class="read-more">by   <a href="https://github.com/ImKennyYip/flappy-bird"target="_blank">ImKennyYip</a></p>
+            </div>
+            <a href="http://whackamole-env.eba-7ipztxku.ap-southeast-2.elasticbeanstalk.com/" class="btn btn-primary" target="_blank">Play Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="game">
+          <img src="pacman4.png" alt="Game 4">
+          <div class="game-content">
+            <h2>Pac-Man</h2>
+            <div class="game-description">
+              <p>"Pacman, the iconic dot-munching arcade character, navigates a maze, gobbling dots and avoiding colorful ghosts chasing him down.</p>
+              <p class="read-more">by   <a href="https://github.com/sharmanirudh/pacmanGame"target="_blank">sharmanirudh</a></p>
+            </div>
+            <a href="http://whackamole-env.eba-7ipztxku.ap-southeast-2.elasticbeanstalk.com/" class="btn btn-primary" target="_blank">Play Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="game">
+          <img src="stack.jpg" alt="Game 4">
+          <div class="game-content">
+            <h2>Tower-stack</h2>
+            <div class="game-description">
+              <p>Tower Stack: Test your timing skills in this addictive game. Build the tallest tower possible by stacking blocks strategically</p>
+              <p class="read-more">by   <a href="https://github.com/harshalparmar/tower-blocks-game"target="_blank">harshalparmar</a></p>
+            </div>
+            <a href="http://whackamole-env.eba-7ipztxku.ap-southeast-2.elasticbeanstalk.com/" class="btn btn-primary" target="_blank">Play Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-4">
+        <div class="game">
+          <img src="memory-match.png" alt="Game 4">
+          <div class="game-content">
+            <h2>Memory card Match</h2>
+            <div class="game-description">
+              <p>Test your concentration and memory skills in this fun card flipping game! Find matching pairs of cards as you compete against friends or yourself.</p>
+              <p class="read-more">by   <a href="https://github.com/VectorStatic/Memory-Matching-Game"target="_blank">VectorStatic</a></p>
+            </div>
+            <a href="http://whackamole-env.eba-7ipztxku.ap-southeast-2.elasticbeanstalk.com/" class="btn btn-primary" target="_blank">Play Now</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</body>
+</html>
