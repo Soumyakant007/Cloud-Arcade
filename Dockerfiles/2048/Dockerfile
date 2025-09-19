@@ -1,13 +1,21 @@
 FROM ubuntu:22.04
 
-RUN apt-get update && apt-get install -y software-properties-common && add-apt-repository universe && apt-get update
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    software-properties-common \
+    nginx \
+    curl \
+    unzip \
+ && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install -y --fix-missing nginx zip curl
+# Download and extract website files
+RUN curl -L https://codeload.github.com/Soumyakant007/2048/zip/refs/heads/main -o /tmp/master.zip \
+ && unzip /tmp/master.zip -d /tmp \
+ && mv /tmp/2048-main/* /var/www/html/ \
+ && rm -rf /tmp/*
 
-RUN echo "daemon off;" >>/etc/nginx/nginx.conf
-RUN curl -o /var/www/html/master.zip -L https://codeload.github.com/Soumyakant007/2048
-RUN cd /var/www/html/ && unzip master.zip && mv 2048-master/* . && rm -rf 2048-master master.zip
-
+# Expose port 80
 EXPOSE 80
 
-CMD ["/usr/sbin/nginx", "-c","/etc/nginx/nginx.conf"]
+# Start nginx in foreground
+CMD ["nginx", "-g", "daemon off;"]
